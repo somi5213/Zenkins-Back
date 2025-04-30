@@ -17,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin("http://localhost:5173")
+@CrossOrigin(origins= "${front.url}")
 public class AttendanceController {
 	
 	private final AttendanceService service;
@@ -42,7 +42,7 @@ public class AttendanceController {
 		}
 	}
 	
-	@GetMapping("updateAttendance")
+	@GetMapping("/updateAttendance")
 	public ResponseEntity<Map<String, Object>> updateAttendance(
 			@RequestParam int userNo
 			) {

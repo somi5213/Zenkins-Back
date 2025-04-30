@@ -28,7 +28,7 @@ import com.workly.final_project.member.model.dto.MemberDeptPositionDTO;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins= "${front.url}")
 @RestController
 @RequestMapping("/api/chat")
 public class ChatController {
@@ -63,9 +63,6 @@ public class ChatController {
 		        return ResponseEntity.status(500).body("즐겨찾기 추가 실패: " + e.getMessage());
 		    }
 		}
-
-
-
 		
 		// 즐겨찾기 리스트 목록
 		@GetMapping("/favorite/{userNo}")
